@@ -1,0 +1,10 @@
+python output.py &
+sleep 1
+python picasso.py &
+sleep 1
+python verifier.py &
+sleep 1
+python classifier.py &
+sleep 1
+python input_file.py &
+sleep 1

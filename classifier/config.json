@@ -1,0 +1,13 @@
+{
+	"conf": {
+		"horizontal_density":12,
+		"vertical_density":7,
+		"size":200,
+		"classifier_size":32,
+		"classes": {
+			"class0": [0,0,0],
+			"class1": [255,0,0],
+			"class2": [0,255,0]
+		}
+	}
+}

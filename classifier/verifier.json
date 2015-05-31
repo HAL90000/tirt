@@ -1,0 +1,28 @@
+{
+	"parametersHost": "localhost:11112",
+
+	"inputs":
+	{
+		"videoInput":{
+			"ip": "127.0.0.1",
+			"port": 10072
+		},
+    "classMatrixInput":{
+			"ip": "127.0.0.1",
+			"port": 10081
+		}
+	},
+
+	"outputs":
+	{
+		"videoOutput":{
+			"ip": "127.0.0.1",
+			"port": 10073
+		},
+		"objectsOutput":{
+			"ip": "127.0.0.1",
+			"port": 10091
+		}
+	}
+
+}
