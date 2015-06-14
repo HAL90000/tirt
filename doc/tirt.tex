@@ -7,7 +7,7 @@
 \usepackage{listings}
 
 \usepackage{graphicx}
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
 
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 
@@ -150,6 +150,8 @@ Właściwa aplikacja wykrywająca składa się z modułów:
   \item Rysowanie
 \end{itemize}
 
+\includegraphics[scale=0.3]{diagram.png}
+
 \subsection{Klasyfikacja(classifier.py)}
 
 Moduł klasyfikujący buduje macierz klas kandydatów. Wejściem są kolejne klatki filmu. Tutaj realizowane jest okno przesuwne. Zachowanie się okna definiowane jest przez konfiguracją. Dla każdego położenia okna wycinany jest obraz w nim zawarty, który następnie jest skalowany do rozmiaru klasyfikatora. W tym momencie obraz jest trójwymiarową tablicą liczb z zakresu (0-255). Ze względu na problemy z odczytem takiej tablicy w module klasyfikującym należy tablicę spłaszczyć do jednego wymiaru.
@@ -198,6 +200,32 @@ Dalej wysyłane są klatka filmu i lista obiektów.
 \subsection{Rysowanie (picasso.py)}
 
 Moduł rysujący rysuje kwadraty obejmujące wykryte obiekty. Otrzymuje klatkę filmu oraz listę obiektów opisaną w Weryfikacji. Dorysowuje na otrzymanej klatce obramowanie wykrytych obiektów oraz wysyła dalej zmodyfikowaną klatkę. Kolory obramowania pochodzą z konfiguracji (config.json).
+
+\section{Dalszy rozwój}
+
+\subsection{Klasyfikator}
+Wykorzystany klasyfikator jest klasyfikatorem typu jednowarstwowa sieć neuronowa, przez co może mieć problemy z rozpoznawaniem bardzie złożonych obiektów. Dobrym pomysłem może być wykorzystanie klasyfikatora wielowarstwowego (e.g. typu autoencoder). Pomysł polega na rekurencyjnym uczeniu zaimplementowanym już algorytmem na danych przetworzonych przez poprzedni przebieg. Przedstawiają to następujące kroki:
+
+Dane 1 - dane uczące jak obecnie
+
+Warstwa 1 - uczenie jak obecnie
+
+Dane 2 - dane 1 przetworzone przez warstwę 1
+
+Warstwa 2 - uczenie jak obecnie, ale na danych 2
+
+Dane 3 - dane 2 przetworzone przez warstwę 2
+
+Warstwa 3 - uczenie jak obecnie, ale na danych 3
+
+... itd. Przy czym każda kolejna warstwa powinna mieć coraz mniej elementów.
+ 
+
+\subsection{Statystyki}
+Ze względu na zdecydowanie zbyt małą spójność wykrytych obiektów postanowiono odłożyć moduł odpowiedzialny za generowanie statystyk na przyszłość. Kiedy osiągnięta zostanie lepsza jakość wykrycia, będzie to z pewnością przydatny moduł. Aby zrealizować ten pomysł wystarczy przesyłać listę wykrytych obiektów w module weryfikującym do nowego modułu statystyki, który zapisywałby w postaci pliku strukturalnego (e.g. xml) informacje o obiekcie (typ, położenie, wielkość).
+
+\subsection{Rozmiar okna}
+Ze względu na niewystarczającą wydajność projekt został uproszczony tak, aby wykorzystywana była jedna wielkość okna przesuwnego. Nie jest to znaczącym ograniczeniem możliwości systemu, ponieważ można uruchomić kilka instancji systemu, każdy dla innej wielkości okna przesuwnego. Daje to automatycznie większą możliwość rozproszenia oraz lepiej wykorzystuje maszyny wieloprocesorowe/wielordzeniowe.
 
 \begin{thebibliography}{9}
 

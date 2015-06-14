@@ -72,10 +72,12 @@ class HashBase
 public:
 	typedef uint64_t T;
 
-	HashBase(int m = 4, int mb = 16, int bitsPerChunk = 1) :
+	HashBase(int m = 4, int mb = 16, int bitsPerChunk = 1, int maxErr = 1) :
 		m(m), mb(mb),
 		mBits(m*mb),
-		mbMask((T(1) << mb) - T(1))
+		mbMask((T(1) << mb) - T(1)),
+		bitsPerChunk(bitsPerChunk),
+		maxErr(maxErr)
 	{
 		chunks.resize(T(1) << mb);
 		for (int i=0;i<chunks.size();++i)
@@ -147,7 +149,7 @@ public:
 		//printf("count:%d\n", count);
 		result.cls = imgs[resultHash];
 
-		if (result.hamming > 2)
+		if (result.hamming > maxErr)
 			result.cls = -1;
 
 		return result;
@@ -208,6 +210,8 @@ private:
 	int mb;
 	int mBits;
 	T mbMask;
+	int bitsPerChunk;
+	int maxErr;
 
 	std::vector<T> move;
 	std::map<T, int> imgs;

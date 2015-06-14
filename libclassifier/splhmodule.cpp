@@ -7,7 +7,7 @@
 static PyObject* SplhError;
 
 static std::vector<Hasher> hashers;
-static HashBase hashBase;
+static HashBase hashBase(4, 16, 1, 4);
 
 typedef uint64_t T;
 

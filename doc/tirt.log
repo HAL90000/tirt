@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.28)  1 JUN 2015 00:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.28)  14 JUN 2015 16:20
 entering extended mode
 **tirt.tex
 (D:\Projekty\tirt\dokumentacja\tirt.tex
@@ -632,40 +632,48 @@ File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 125.
+
+<diagram.png, id=15, 1505.625pt x 892.83563pt>
+File: diagram.png Graphic file (type png)
+ <use diagram.png>
+Package pdftex.def Info: diagram.png used on input line 153.
+(pdftex.def)             Requested size: 451.691pt x 267.85275pt.
  [2]
-<lot.jpg, id=20, 481.8pt x 320.69812pt>
+<lot.jpg, id=22, 481.8pt x 320.69812pt>
 File: lot.jpg Graphic file (type jpg)
  <use lot.jpg>
-Package pdftex.def Info: lot.jpg used on input line 169.
+Package pdftex.def Info: lot.jpg used on input line 171.
 (pdftex.def)             Requested size: 385.4405pt x 256.55884pt.
- [3 <D:/Projekty/tirt/dokumentacja/lot.jpg>] (D:\Projekty\tirt\dokumentacja\tir
-t.aux) ) 
+ [3 <D:/Projekty/tirt/dokumentacja/diagram.png> <D:/Projekty/tirt/dokumentacja/
+lot.jpg>] [4]
+(D:\Projekty\tirt\dokumentacja\tirt.aux) ) 
 Here is how much of TeX's memory you used:
- 6010 strings out of 493921
- 79236 string characters out of 3144882
- 165166 words of memory out of 3000000
- 9213 multiletter control sequences out of 15000+200000
+ 6016 strings out of 493921
+ 79314 string characters out of 3144882
+ 164171 words of memory out of 3000000
+ 9217 multiletter control sequences out of 15000+200000
  16059 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,7n,32p,619b,1210s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files (x86)/
-MiKTeX 2.9/fonts/enc/dvips/pl/plme.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts
-/enc/dvips/pl/plms.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/pl
-mi.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/pl/plex10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/pl/plmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/pl/plr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr17.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on tirt.pdf (3 pages, 197224 bytes).
+{C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/enc/dvips/pl/pltt.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl
+/plrm.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plme.enc}{C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files (x86
+)/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}<C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/pl/plbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/pl/plbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plex10.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi7.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/pl/plr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/pl/plr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl
+/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb
+>
+Output written on tirt.pdf (4 pages, 241188 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

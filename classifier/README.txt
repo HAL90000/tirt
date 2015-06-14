@@ -1,0 +1,1 @@
+aby uruchomiæ przyk³ad nale¿y uruchomiæ skrypt run_video

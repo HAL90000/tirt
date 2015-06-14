@@ -1,3 +1,0 @@
-python output.py &
-python filter1service.py &
-python input.py &

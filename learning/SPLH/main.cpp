@@ -19,6 +19,7 @@
 #include "CorrelationMat.h"
 
 #include "GDMPCA.h"
+#include "SPLH.h"
 
 int main(int argc, char **argv)
 {
@@ -33,7 +34,6 @@ int main(int argc, char **argv)
 	std::clog << "Loading data... " << std::endl;
 
 	int M = 32 * 32 * 3;
-	SubCorrMatrix<Eigen::MatrixXf> subCorrMat(M);
 
 	//M = 1024;
 
@@ -54,9 +54,16 @@ int main(int argc, char **argv)
 
 	int N = images.size();
 
-	std::clog << "Creating matrix X... ";
-	
+	std::clog << "Creating matrix X(" << M << "x" << N << ")... ";
+
+	int L = 0;
+	for (auto img : images)
+		if (img.label != 255)
+			++L;
+
 	Eigen::MatrixXf X(M, N);
+	Eigen::MatrixXf Xl(M, L);
+
 	//Eigen::MatrixXf mi = subCorrMat.Mean();
 	Eigen::MatrixXf mi = Eigen::MatrixXf::Zero(M, 1);
 	
@@ -66,6 +73,15 @@ int main(int argc, char **argv)
 			double v = images[j].v[i] / 255.0f;
 			X(i, j) = v;
 			mi(i, 0) += v;
+		}
+
+	int tl = 0;
+	for (auto img : images)
+		if (img.label != 255)
+		{
+			for (int i = 0; i < M; ++i)
+				Xl(i, tl) = img.v[i] / 255.0f;
+			++tl;
 		}
 
 	for (int i = 0; i < M; ++i)
@@ -79,33 +95,35 @@ int main(int argc, char **argv)
 	
 
 	std::clog << "DONE" << std::endl;
-	
-	std::clog << "Creating matrix S... ";
 
-	//Eigen::MatrixXf S(N, N);
-	//for (int i = 0; i < N; ++i)
-	//	for (int j = 0; j < N; ++j)
-	//		S(i, j) = images[i].label == images[j].label ? 1 : -1;
+	std::clog << "Creating matrix S("<<L<<"x"<<L<<")... ";
+
+	Eigen::MatrixXf S(L, L);
+	for (int i = 0; i < L; ++i)
+		for (int j = 0; j < L; ++j)
+			S(i, j) = images[i].label == images[j].label ? 1 : -1;
 
 	std::clog << "DONE" << std::endl;
 	
+	/*
 	std::clog << "Creating matrix M... ";
 
 	Eigen::MatrixXf Me(M, M);
 	//Eigen::MatrixXf Me = subCorrMat.CorrelationMatrix();
-	//Me = X * S * X.transpose();
-	//Me += 0.1 * (X * X.transpose());
+	double beta = 0.3;
 
-	Me = X * X.transpose();
+	Me = Xl * S * Xl.transpose();
+	Me += beta * (X * X.transpose());
 
 	std::clog << "DONE" << std::endl;
-
+	*/
 	std::clog << "Matrix deflation... " << std::endl;
 
 	int H = 64;
 
-	auto x = OrtogonalDeflation(Me, H);
+	//auto x = OrtogonalDeflation(Me, H);
 	//auto x = GDMPCA(Me, 10);
+	auto x = SPLH(X, Xl, S, H, 1.0 / M, 0.3);
 
 	std::clog << "DONE" << std::endl;
 

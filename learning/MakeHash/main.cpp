@@ -88,11 +88,24 @@ int main(int argc, char **argv)
 	}
 
 	std::clog << "DONE" << std::endl;
-
+	/*
+	for (const auto &hash : hashers)
+	{
+		double bias = 0;
+		for (const auto& img : images)
+		{
+			for (int i = 0; i < img.v.size(); ++i)
+				bias += img.v[i] / 255.0 * hash.v[i];
+		}
+		bias /= images.size();
+		bias = -bias;
+		std::clog << hash.bias << " _ " << bias << "(" << (abs(bias - hash.bias) < 0.001) << ")" << std::endl;
+	}
+	*/
 	for (const auto& img : images)
 	{
-		if (img.label == 255)
-			continue;
+		//if (img.label == 255)
+		//	continue;
 		std::string h = hash(img, hashers);
 		std::cout << img.label << "\t" << h << std::endl;
 	}
